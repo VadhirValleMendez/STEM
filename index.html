@@ -1,211 +1,89 @@
 <!DOCTYPE html>
 <html lang="es">
+
+<!-- Cabeza -->
 <head>
+    <!-- Linkeamos el styles (Esto NO es un comentario de IA, solo soy un programador responsable)-->
+    <link rel = "stylesheet" href="CSS/styles.css">
+
     <meta charset="UTF-8">
-    <title>Vadhir Valle Méndez</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            background: #ffffff;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            padding: 20px;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .contenedor {
-            max-width: 900px;
-            width: 100%;
-        }
-        
-        .encabezado {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 25px;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-        
-        .seccion-idioma {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-        
-        .contenedor-interruptor {
-            position: relative;
-            display: inline-flex;
-            background: #f0f0f0;
-            border-radius: 4px;
-            padding: 4px;
-        }
-        
-        .boton-interruptor {
-            background: transparent;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-            font-size: 16px;
-            color: #666;
-            position: relative;
-            z-index: 2;
-            transition: color 0.3s ease;
-        }
-        
-        .boton-interruptor.activo {
-            color: #000;
-        }
-        
-        .control-deslizante {
-            position: absolute;
-            top: 4px;
-            left: 4px;
-            height: calc(100% - 8px);
-            width: calc(50% - 4px);
-            background: white;
-            border-radius: 4px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-        
-        .control-deslizante.en {
-            transform: translateX(100%);
-        }
-        
-        .boton-descarga {
-            background: #000000;
-            color: white;
-            border: none;
-            width: 44px;
-            height: 44px;
-            border-radius: 4px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-            text-decoration: none;
-        }
-        
-        .boton-descarga:hover {
-            background: #333333;
-            transform: translateY(-2px);
-        }
-        
-        .boton-descarga svg {
-            width: 20px;
-            height: 20px;
-            fill: white;
-        }
-        
-        .contenedor-papel {
-            background: white;
-            overflow: hidden;
-            margin: 0 auto;
-            position: relative;
-        }
-        
-        .imagen-papel {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-        
-        @media (max-width: 768px) {
-            body {
-                padding: 10px;
-            }
-            
-            .encabezado {
-                justify-content: center;
-            }
-            
-            .seccion-idioma {
-                flex-direction: row;
-                justify-content: center;
-            }
-            
-            .boton-interruptor {
-                padding: 8px 16px;
-                font-size: 14px;
-            }
-            
-            .boton-descarga {
-                width: 40px;
-                height: 40px;
-            }
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STEM</title>
 </head>
+
+<!-- Cuerpo -->
 <body>
-    <div class="contenedor">
-        <div class="encabezado">
-            <div class="seccion-idioma">
-                <div class="contenedor-interruptor" id="contenedorInterruptor">
-                    <div class="control-deslizante" id="controlDeslizante"></div>
-                    <button class="boton-interruptor activo" data-lang="es" id="botonEs">ES</button>
-                    <button class="boton-interruptor" data-lang="en" id="botonEn">EN</button>
-                </div>
-                
-                <a href="assets/Vadhir_Valle_Resume_ES.pdf" class="boton-descarga" download id="botonDescarga">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
-                    </svg>
-                </a>
-            </div>
-        </div>
-        
-        <div class="contenedor-papel">
-            <img 
-                src="Vadhir_Valle_Resume_ES.jpg" 
-                alt="Vadhir Valle Méndez ES"
-                class="imagen-papel"
-                id="imagenCV"
-            >
-        </div>
-    </div>
 
-    <script>
-        const imagenCV = document.getElementById('imagenCV');
-        const botonDescarga = document.getElementById('botonDescarga');
-        const botonEs = document.getElementById('botonEs');
-        const botonEn = document.getElementById('botonEn');
-        const controlDeslizante = document.getElementById('controlDeslizante');
+<!-- 
+class/id 
+class: Se aplica a un conjunto de elementos, en el archivo CSS lo referenciamos con: .nombre-clase 
+id: Se aplica a un elemento en específico, ya sea para aplicar un estilo o manipularlo con JS
+-->
+    <header class = "header"> 
 
-        function cambiarAEspanol() {
-            imagenCV.src = 'assets/Vadhir_Valle_Resume_ES.jpg';
-            imagenCV.alt = 'Vadhir Valle Méndez ES';
-            botonDescarga.href = 'assets/Vadhir_Valle_Resume_ES.pdf';
-
-            botonEs.classList.add('activo');
-            botonEn.classList.remove('activo');
-            controlDeslizante.classList.remove('en');
-        }
-
-        function cambiarAIngles() {
-            imagenCV.src = 'assets/Vadhir_Valle_Resume_EN.jpg';
-            imagenCV.alt = 'Vadhir Valle Méndez EN';
-            botonDescarga.href = 'assets/Vadhir_Valle_Resume_EN.pdf';
+        <div class = "menu container">
+            <a href = "#" class = "logo">STEM</a>
+            <input type = "checkbox" id = "menu"/>
+            <label for = "menu">
+                <img src="ASSETS/logo.png" class="menu-icon">
+            </label>
             
-            botonEn.classList.add('activo');
-            botonEs.classList.remove('activo');
-            controlDeslizante.classList.add('en');
-        }
-        
-        botonEs.addEventListener('click', cambiarAEspanol);
-        botonEn.addEventListener('click', cambiarAIngles);
-        
-        cambiarAEspanol();
-    </script>
+            <nav class = "navbar">
+                <ul>
+                    <li> <a href = "index.html"> Home </a> </li>
+                    <li> <a href = "conocenos.html"> Get to know us </a> </li>
+                    <li> <a href = "contactos.html"> Contact </a> </li>
+                    <li> <a href = "archivos.html"> Archive </a> </li>
+                </ul>
+            </nav>
+
+        </div>
+
+        <div class = "header-content container">
+            <h1> "A comet’s trail never reaches the destination, but it is part of the journey." </h1>
+            <h2>-Diego García León</h2>
+            <p>
+With this page, we want to expand our reach and challenge ourselves to see how far we can make an impact with our ideas.
+            </p>
+        </div>
+
+    </header>
+
+    <section class="video">
+
+        <img src="ASSETS/24.png">
+
+        <div class="stem-video">
+            <video src="ASSETS/stem-video2.mp4" autoplay muted loop playsinline></video>
+        </div>
+
+        <img src="ASSETS/23.png">
+
+    </section>
+
+     <section class = "stem container">
+        <div class = "stem-content">
+            
+            <h2>WE BRING TOOLS, FUN, AND HANDS-ON LEARNING </h2>
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+                Sequi quis sunt ipsum perspiciatis itaque! 
+                Quis excepturi quod vitae, delectus eius adipisci nesciunt eos? 
+                Nemo neque veritatis dignissimos earum natus eveniet?
+            </p>
+        </div>
+    </section>
+
+    <section>
+        <div class = "stars">
+            <img src = "ASSETS/stars.png" alt = "" id = "stars-image">
+        </div>
+    </section>
+
+    <!-- El JS se linkea al final del body -->
+    <script src = JS/script.js></script>
 </body>
+
 </html>
+
+<!--  -->
