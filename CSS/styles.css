@@ -57,7 +57,7 @@ body {
 
 .logo{
     color: rgb(254, 249, 230);
-    font-size: 50px;
+    font-size: 20px;
     font-weight: 800;
     position: relative;
     left: 10px;
@@ -178,6 +178,7 @@ body {
 .stem-video {
     max-width: 1400px;
     width: 100%;
+        aspect-ratio: 16 / 9;
 }
 
 /* Video en sí */
@@ -185,19 +186,34 @@ body {
     width: 100%;
     height: auto;
     display: block;
+        object-fit: contain;
 }
 
 .stem-video-c {
     max-width: 1200px;
     width: 100%;
     margin-bottom: 250px;
+        aspect-ratio: 16 / 9;
 }
+
+@media (max-width: 768px) {
+    .video {
+        height: auto;          /* 🔥 quita altura fija */
+        padding: 40px 0;
+    }
+
+    .stem-video {
+        max-width: 100%;
+    }
+}
+
 
 /* Video en sí */
 .stem-video-c video {
     width: 100%;
     height: auto;
     display: block;
+        object-fit: contain;
 }
 
 
