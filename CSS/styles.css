@@ -150,10 +150,28 @@ body {
     gap: 40px; /* espacio entre imágenes y video */
 }
 
+.video-c {
+    width: 100%;
+    height: 500px;
+    background-color: black;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px; /* espacio entre imágenes y video */
+}
+
+
 /* Controlamos las imágenes */
 .video img {
     max-width: 300px;   /* ajusta a tu gusto */
     height: auto;
+}
+
+.video-c img {
+    max-width: 300px;   /* ajusta a tu gusto */
+    height: auto;
+    margin-top: -300px;
 }
 
 /* Contenedor del video */
@@ -164,6 +182,19 @@ body {
 
 /* Video en sí */
 .stem-video video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.stem-video-c {
+    max-width: 1200px;
+    width: 100%;
+    margin-bottom: 250px;
+}
+
+/* Video en sí */
+.stem-video-c video {
     width: 100%;
     height: auto;
     display: block;
@@ -225,6 +256,7 @@ body {
     text-transform: uppercase;
 }
 
+
 .texto{
     text-align: center;
     margin-top: -20px;
@@ -255,4 +287,33 @@ body {
     align-items: center;     /* vertical */
 }
 
+.mapa-box {
+    width: 500px;
+    height: 500px;   /* controla la altura aquí */
+    margin-bottom: 100px;
+}
 
+.mapa-box iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.mapa h2{
+        color: rgb(254, 249, 230);
+}
+
+.mapa-layout {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+
+.mapa-texto {
+    max-width: 400px;
+    color: rgb(254, 249, 230);
+    font-size: 32px;
+    line-height: 1.6;
+    text-align:left;
+}
