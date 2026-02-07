@@ -139,89 +139,137 @@ body {
     font-size: 30px;
 }
 
-.video {
+/* Contenedor principal del video */
+.video, .video-c {
     width: 100%;
-    height: 500px;
     background-color: black;
-
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 40px; /* espacio entre imágenes y video */
+    gap: 40px;
+    padding: 40px 20px;
 }
 
-.video-c {
-    width: 100%;
-    height: 500px;
-    background-color: black;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 40px; /* espacio entre imágenes y video */
-}
-
-
-/* Controlamos las imágenes */
-.video img {
-    max-width: 300px;   /* ajusta a tu gusto */
+/* Controlamos las imágenes en desktop */
+.video img, .video-c img {
+    max-width: 300px;
     height: auto;
+}
+
+/* Ajuste específico para .video-c */
+.video-c {
+    margin-top: 0;
 }
 
 .video-c img {
-    max-width: 300px;   /* ajusta a tu gusto */
-    height: auto;
-    margin-top: 100px;
+    margin-top: -300px;
 }
 
 /* Contenedor del video */
-.stem-video {
+.stem-video, .stem-video-c {
     max-width: 1400px;
     width: 100%;
-        aspect-ratio: 16 / 9;
+    aspect-ratio: 16 / 9;
 }
 
 /* Video en sí */
-.stem-video video {
+.stem-video video, .stem-video-c video {
     width: 100%;
-    height: auto;
+    height: 100%;
     display: block;
-        object-fit: contain;
+    object-fit: contain;
 }
 
-.stem-video-c {
-    max-width: 1200px;
+/* Ocultar checkbox */
+.menu-toggle {
+    display: none;
+}
+
+/* Mostrar/ocultar menú basado en checkbox */
+.menu-toggle:checked ~ .navbar {
+    right: 0;
+}
+
+.menu-toggle:checked ~ .hamburger span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.menu-toggle:checked ~ .hamburger span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle:checked ~ .hamburger span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+.menu-toggle:checked ~ .navbar-overlay {
+    display: block;
+}
+
+/* Overlay */
+.navbar-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    margin-bottom: -100px;
-        aspect-ratio: 16 / 9;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 999;
 }
 
+
+/* MEDIA QUERIES PARA MÓVIL */
 @media (max-width: 768px) {
-    .video {
-        flex-direction: column; /* 🔥 Esto hace que se pongan uno debajo de otro */
-        height: auto;           
-        padding: 20px;          /* Un poco de respiro a los lados */
-        gap: 20px;              /* Reducimos el espacio para que no sea tan largo */
-    }
-
-    .video img {
-        max-width: 80%;         /* Las imágenes ya no intentarán medir 300px si no caben */
+    .video, .video-c {
+        flex-direction: column; /* 🔥 Cambia a columna en móvil */
         height: auto;
+        gap: 20px; /* Reduce el espacio entre elementos */
+        padding: 20px 15px;
     }
-
-    .stem-video {
-        width: 100%;            /* El video ocupará todo el ancho disponible */
+    
+    /* Ajuste específico para .video-c en móvil */
+    .video-c img {
+        margin-top: 0; /* Elimina el margen negativo en móvil */
+    }
+    
+    /* Imágenes en móvil */
+    .video img, .video-c img {
+        max-width: 100%; /* 🔥 Las imágenes ocupan el ancho completo */
+        width: 100%;
+        height: auto;
+        max-height: 200px; /* Limita la altura */
+        object-fit: contain;
+    }
+    
+    /* Video en móvil - ocupa todo el ancho */
+    .stem-video, .stem-video-c {
+        width: 100%;
         max-width: 100%;
+        aspect-ratio: 16/9; /* Mantiene la proporción */
+    }
+    
+    /* Contenedores generales */
+    .container, .container2 {
+        max-width: 100%;
+        padding: 0 15px;
     }
 }
 
-
-/* Video en sí */
-.stem-video-c video {
-    width: 100%;
-    height: auto;
-    display: block;
-        object-fit: contain;
+/* Para pantallas muy pequeñas (menos de 480px) */
+@media (max-width: 480px) {
+    .video, .video-c {
+        gap: 15px;
+        padding: 15px 10px;
+    }
+    
+    .video img, .video-c img {
+        max-height: 150px;
+    }
+    
+    .stem-video, .stem-video-c {
+        aspect-ratio: 4/3; /* Proporción más cuadrada para móviles muy pequeños */
+    }
 }
 
 
