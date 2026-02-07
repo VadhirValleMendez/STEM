@@ -198,11 +198,19 @@ body {
 
 @media (max-width: 768px) {
     .video {
-        height: auto;          /* 🔥 quita altura fija */
-        padding: 40px 0;
+        flex-direction: column; /* 🔥 Esto hace que se pongan uno debajo de otro */
+        height: auto;           
+        padding: 20px;          /* Un poco de respiro a los lados */
+        gap: 20px;              /* Reducimos el espacio para que no sea tan largo */
+    }
+
+    .video img {
+        max-width: 80%;         /* Las imágenes ya no intentarán medir 300px si no caben */
+        height: auto;
     }
 
     .stem-video {
+        width: 100%;            /* El video ocupará todo el ancho disponible */
         max-width: 100%;
     }
 }
