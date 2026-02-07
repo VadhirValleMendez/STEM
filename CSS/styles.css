@@ -27,9 +27,9 @@ body {
 
 .header{
     background-image: url(../ASSETS/negro.png);
-    background-position: center bottom; /* Centra el background */
-    background-repeat: no-repeat; /* Hace que no se repita (tilee) el background */ 
-    background-size: cover; /* Cubre todo el header */
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
     min-height: 70vh;
     display: flex;
     align-items: center;
@@ -37,12 +37,12 @@ body {
 
 .header-content{
     color: rgb(254, 249, 230);
-        text-align: center;
+    text-align: center;
 }
 
 .header-content-mini{
     color: rgb(254, 249, 230);
-        text-align: center;
+    text-align: center;
 }
 
 .menu{
@@ -53,14 +53,13 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 20px;
 }
 
 .logo{
     color: rgb(254, 249, 230);
     font-size: 20px;
     font-weight: 800;
-    position: relative;
-    left: 10px;
 }
 
 .menu .navbar ul li{
@@ -69,7 +68,7 @@ body {
 }
 
 .menu .navbar ul li a{
-    font-size: 18px; 
+    font-size: 18px;
     padding: 20px;
     color: rgb(254, 249, 230);
     display: block;
@@ -94,10 +93,9 @@ body {
 }
 
 .header-content h1{
-    font-size:70px;
+    font-size: 70px;
     line-height: 80px;
     text-transform: uppercase;
-
     margin-top: 150px;
 }
 
@@ -108,7 +106,7 @@ body {
 }
 
 .header-content-mini h1{
-    font-size:100px;
+    font-size: 100px;
     line-height: 80px;
     text-transform: uppercase;
     margin-top: 200px;
@@ -139,7 +137,6 @@ body {
     font-size: 30px;
 }
 
-/* Contenedor principal del video */
 .video, .video-c {
     width: 100%;
     background-color: black;
@@ -150,13 +147,11 @@ body {
     padding: 40px 20px;
 }
 
-/* Controlamos las imágenes en desktop */
 .video img, .video-c img {
     max-width: 300px;
     height: auto;
 }
 
-/* Ajuste específico para .video-c */
 .video-c {
     margin-top: 0;
 }
@@ -165,14 +160,12 @@ body {
     margin-top: -300px;
 }
 
-/* Contenedor del video */
 .stem-video, .stem-video-c {
     max-width: 1400px;
     width: 100%;
     aspect-ratio: 16 / 9;
 }
 
-/* Video en sí */
 .stem-video video, .stem-video-c video {
     width: 100%;
     height: 100%;
@@ -180,133 +173,20 @@ body {
     object-fit: contain;
 }
 
-/* Ocultar checkbox */
-.menu-toggle {
-    display: none;
-}
-
-/* Mostrar/ocultar menú basado en checkbox */
-.menu-toggle:checked ~ .navbar {
-    right: 0;
-}
-
-.menu-toggle:checked ~ .hamburger span:nth-child(1) {
-    transform: rotate(45deg) translate(6px, 6px);
-}
-
-.menu-toggle:checked ~ .hamburger span:nth-child(2) {
-    opacity: 0;
-}
-
-.menu-toggle:checked ~ .hamburger span:nth-child(3) {
-    transform: rotate(-45deg) translate(6px, -6px);
-}
-
-.menu-toggle:checked ~ .navbar-overlay {
-    display: block;
-}
-
-/* Overlay */
-.navbar-overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.5);
-    z-index: 999;
-}
-
-
-/* MEDIA QUERIES PARA MÓVIL */
-@media (max-width: 768px) {
-    .video, .video-c {
-        flex-direction: column; /* 🔥 Cambia a columna en móvil */
-        height: auto;
-        gap: 20px; /* Reduce el espacio entre elementos */
-        padding: 20px 15px;
-    }
-    
-    /* Ajuste específico para .video-c en móvil */
-    .video-c img {
-        margin-top: 0; /* Elimina el margen negativo en móvil */
-    }
-    
-    /* Imágenes en móvil */
-    .video img, .video-c img {
-        max-width: 100%; /* 🔥 Las imágenes ocupan el ancho completo */
-        width: 100%;
-        height: auto;
-        max-height: 200px; /* Limita la altura */
-        object-fit: contain;
-    }
-    
-    /* Video en móvil - ocupa todo el ancho */
-    .stem-video, .stem-video-c {
-        width: 100%;
-        max-width: 100%;
-        aspect-ratio: 16/9; /* Mantiene la proporción */
-    }
-    
-    /* Contenedores generales */
-    .container, .container2 {
-        max-width: 100%;
-        padding: 0 15px;
-    }
-}
-
-/* Para pantallas muy pequeñas (menos de 480px) */
-@media (max-width: 480px) {
-    .video, .video-c {
-        gap: 15px;
-        padding: 15px 10px;
-    }
-    
-    .video img, .video-c img {
-        max-height: 150px;
-    }
-    
-    .stem-video, .stem-video-c {
-        aspect-ratio: 4/3; /* Proporción más cuadrada para móviles muy pequeños */
-    }
-}
-
-
-.header-content h1 {
-    animation: flotar 3s ease-in-out infinite;
-}
-
-@keyframes flotar {
-    0% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-30px);
-    }
-    100% {
-        transform: translateY(0);
-    }
-}
-
 .fotito {
     position: relative;
     width: 300px;
     height: 350px;
-    margin: 0 auto; /* centra todo */
-
+    margin: 0 auto;
     margin-top: -400px;
-    
 }
 
 .fotito2 {
     position: relative;
     width: 300px;
     height: 350px;
-    margin: 0 auto; /* centra todo */
-
+    margin: 0 auto;
     margin-top: -100px;
-    
 }
 
 .gif {
@@ -328,7 +208,6 @@ body {
     text-transform: uppercase;
 }
 
-
 .texto{
     text-align: center;
     margin-top: -20px;
@@ -336,7 +215,6 @@ body {
     margin-left: auto;
     margin-right: auto;
     color: rgb(254, 249, 230);
-
 }
 
 .fotos {
@@ -355,8 +233,8 @@ body {
 
 .stars {
     display: flex;
-    justify-content: center; /* horizontal */
-    align-items: center;     /* vertical */
+    justify-content: center;
+    align-items: center;
 }
 
 .mapa{
@@ -365,7 +243,7 @@ body {
 
 .mapa-box {
     width: 500px;
-    height: 500px;   /* controla la altura aquí */
+    height: 500px;
     margin-bottom: 100px;
 }
 
@@ -376,7 +254,7 @@ body {
 }
 
 .mapa h2{
-        color: rgb(254, 249, 230);
+    color: rgb(254, 249, 230);
 }
 
 .mapa-layout {
@@ -385,11 +263,383 @@ body {
     gap: 60px;
 }
 
-
 .mapa-texto {
     max-width: 400px;
     color: rgb(254, 249, 230);
     font-size: 32px;
     line-height: 1.6;
-    text-align:left;
+    text-align: left;
+}
+
+.archive-section {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.pdf-item {
+    background: rgb(0, 0, 0);
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 30px;
+    border-left: 4px solid rgb(254, 249, 230);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.pdf-item h2 {
+    color: rgb(254, 249, 230);
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.pdf-item p {
+    color: rgb(254, 249, 230);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.download-btn {
+    display: inline-block;
+    background-color: rgb(254, 249, 230);
+    color: black;
+    padding: 10px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.download-btn:hover {
+    background-color: gray;
+}
+
+/* ANIMACIÓN */
+.header-content h1 {
+    animation: flotar 3s ease-in-out infinite;
+}
+
+@keyframes flotar {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-30px); }
+    100% { transform: translateY(0); }
+}
+
+/* MENÚ HAMBURGUESA */
+#menu:checked ~ .navbar{
+    display: initial;
+}
+
+/* RESPONSIVE PARA TABLETS */
+@media (max-width: 991px){
+    .menu{
+        padding: 20px;
+    }
+
+    .menu label{
+        display: initial;
+    }
+
+    .menu .navbar{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.9);
+        display: none;
+        z-index: 1000;
+    }
+
+    .menu .navbar ul li{
+        width: 100%;
+        text-align: center;
+    }
+
+    .menu .navbar ul li a{
+        padding: 15px;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .header-content h1{
+        font-size: 50px;
+        line-height: 60px;
+        margin-top: 120px;
+    }
+
+    .header-content p{
+        font-size: 24px;
+        margin-top: 30px;
+        margin-bottom: 100px;
+    }
+
+    .header-content-mini h1{
+        font-size: 70px;
+        margin-top: 150px;
+    }
+
+    .header-content-mini p{
+        font-size: 24px;
+        margin-bottom: 100px;
+    }
+
+    .stem-content h2{
+        font-size: 32px;
+    }
+
+    .stem-content p{
+        font-size: 24px;
+    }
+
+    .mapa-layout {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .mapa-box {
+        width: 100%;
+        height: 400px;
+        order: 2;
+    }
+
+    .mapa-texto {
+        max-width: 100%;
+        font-size: 28px;
+        text-align: center;
+        order: 1;
+    }
+
+    .mapa{
+        margin-top: 150px;
+    }
+
+    .fotito, .fotito2 {
+        margin-top: 0;
+        width: 250px;
+        height: 300px;
+    }
+
+    .imagen {
+        width: 200px;
+    }
+
+    .texto {
+        margin-top: 20px;
+        padding: 0 20px;
+    }
+
+    .video-c img {
+        margin-top: 0;
+    }
+}
+
+/* RESPONSIVE PARA MÓVILES */
+@media (max-width: 768px) {
+    .container, .container2 {
+        max-width: 100%;
+        padding: 0 15px;
+    }
+
+    .header{
+        min-height: 50vh;
+    }
+
+    .header-content h1{
+        font-size: 36px;
+        line-height: 46px;
+        margin-top: 100px;
+    }
+
+    .header-content p{
+        font-size: 20px;
+        margin-top: 20px;
+        margin-bottom: 80px;
+        padding: 0 15px;
+    }
+
+    .header-content-mini h1{
+        font-size: 48px;
+        line-height: 58px;
+        margin-top: 120px;
+    }
+
+    .header-content-mini p{
+        font-size: 20px;
+        margin-bottom: 80px;
+        padding: 0 15px;
+    }
+
+    .stem{
+        padding: 60px 0;
+    }
+
+    .stem-content h2{
+        font-size: 28px;
+        margin-top: 30px;
+        padding: 0 15px;
+    }
+
+    .stem-content p{
+        font-size: 20px;
+        padding: 0 15px;
+    }
+
+    .video, .video-c {
+        flex-direction: column;
+        gap: 30px;
+        padding: 30px 15px;
+    }
+
+    .video img, .video-c img {
+        max-width: 100%;
+        max-height: 200px;
+    }
+
+    .stem-video, .stem-video-c {
+        aspect-ratio: 16/9;
+    }
+
+    .fotos, .grid-fotos {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        margin-top: 60px;
+        padding: 0 15px;
+    }
+
+    .fotito, .fotito2 {
+        width: 200px;
+        height: 250px;
+    }
+
+    .imagen {
+        width: 180px;
+    }
+
+    .mapa{
+        margin-top: 100px;
+        padding: 0 15px;
+    }
+
+    .mapa-box {
+        height: 300px;
+        margin-bottom: 50px;
+    }
+
+    .mapa-texto {
+        font-size: 24px;
+    }
+
+    .archive-section {
+        padding: 30px 15px;
+    }
+
+    .pdf-item {
+        padding: 20px;
+    }
+
+    .pdf-item h2 {
+        font-size: 1.3rem;
+    }
+
+    .download-btn {
+        width: 100%;
+        text-align: center;
+        padding: 12px;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
+
+    .menu-icon {
+        width: 80px;
+    }
+
+    .header-content h2 {
+        text-align: center;
+        font-size: 20px;
+    }
+}
+
+/* RESPONSIVE PARA MÓVILES PEQUEÑOS */
+@media (max-width: 480px) {
+    .header-content h1{
+        font-size: 30px;
+        line-height: 40px;
+        margin-top: 80px;
+    }
+
+    .header-content p{
+        font-size: 18px;
+        margin-bottom: 60px;
+    }
+
+    .header-content-mini h1{
+        font-size: 36px;
+        line-height: 46px;
+    }
+
+    .header-content-mini p{
+        font-size: 18px;
+    }
+
+    .stem-content h2{
+        font-size: 24px;
+    }
+
+    .stem-content p{
+        font-size: 18px;
+    }
+
+    .stem-video, .stem-video-c {
+        aspect-ratio: 4/3;
+    }
+
+    .video img, .video-c img {
+        max-height: 150px;
+    }
+
+    .fotito, .fotito2 {
+        width: 180px;
+        height: 220px;
+    }
+
+    .imagen {
+        width: 160px;
+    }
+
+    .mapa-box {
+        height: 250px;
+    }
+
+    .mapa-texto {
+        font-size: 20px;
+    }
+
+    .menu {
+        padding: 15px;
+    }
+
+    @keyframes flotar {
+        0% { transform: translateY(0); }
+        50% { transform: translateY(-15px); }
+        100% { transform: translateY(0); }
+    }
+}
+
+/* AJUSTES DE ORIENTACIÓN HORIZONTAL EN MÓVILES */
+@media (max-height: 500px) and (orientation: landscape) {
+    .header{
+        min-height: 80vh;
+    }
+    
+    .header-content h1{
+        margin-top: 80px;
+        font-size: 40px;
+    }
+    
+    .menu .navbar {
+        max-height: 70vh;
+        overflow-y: auto;
+    }
 }
